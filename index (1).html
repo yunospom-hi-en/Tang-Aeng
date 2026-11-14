@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="th" data-astryx-theme="neutral"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Codewords · หน่วยถอดรหัสลับ</title><style>*{box-sizing:border-box}body{margin:0;background:var(--color-background-body);color:var(--color-text-primary);font:16px/1.7 var(--font-family-body);padding:0 24px}button,input,select{font:inherit;color:var(--color-text-primary)}button{cursor:pointer;border:1px solid var(--color-border);background:var(--color-background-card);padding:10px 16px;border-radius:7px;min-height:46px}button:disabled{opacity:.5;cursor:default}button:hover:not(:disabled){border-color:var(--color-text-accent)}button.primary{background:var(--color-text-accent);color:var(--color-background-body);font-weight:750}input,select{width:100%;min-width:0;border:1px solid var(--color-border);background:var(--color-background-body);padding:11px 12px;border-radius:7px;min-height:48px}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--color-text-accent);outline-offset:3px}h1,h2,h3,p{margin:0}label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}.shell{max-width:1040px;margin:auto}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--color-border);padding:20px 0}.brand{display:flex;gap:12px;align-items:center}.logo{display:grid;place-items:center;width:42px;height:47px;font-size:31px;line-height:1;font-weight:900;border-radius:4px 4px 14px 14px;background:var(--color-text-accent);color:var(--color-background-body)}.brand strong{letter-spacing:1px}.brand small{display:block;font-size:12px;color:var(--color-text-secondary)}.intro{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:28px 0}.intro-copy{position:relative;padding-right:50px}.eyebrow{font-size:12px;letter-spacing:.5px;color:var(--color-text-accent);font-weight:700}h1{font-size:35px;line-height:1.3;margin:12px 0;letter-spacing:-.5px}h1 span{color:var(--color-text-accent)}.intro p{font-size:14px;color:var(--color-text-secondary)}.spy-stamp{display:inline-block;margin-top:17px;padding:2px 15px;border:2px solid var(--color-text-accent);color:var(--color-text-accent);font-size:15px;font-weight:700;transform:rotate(-4deg);letter-spacing:2px}.setup{display:grid;grid-template-columns:1fr;gap:9px;min-width:250px;background:var(--color-background-card);border:1px solid var(--color-border);border-top:4px solid var(--color-text-accent);border-radius:8px;padding:20px}.setup small{font-size:12px;text-align:center;color:var(--color-text-secondary)}.notice{font-size:13px;color:var(--color-text-secondary);border:1px dashed var(--color-border);padding:12px 15px;border-radius:6px;margin-bottom:18px}.notice strong{display:block;color:var(--color-text-primary);margin-bottom:2px}.banner{display:flex;justify-content:space-between;align-items:center;gap:15px;background:var(--color-background-card);border:1px solid var(--color-border);border-left:5px solid var(--color-text-accent);border-radius:8px;padding:18px 20px;margin-bottom:17px}.banner h2{font-size:24px;line-height:1.4}.banner p{font-size:14px;color:var(--color-text-secondary);margin-top:6px}.score{font-size:14px;text-align:right;white-space:nowrap}.score strong{font-size:26px}.clue-form{display:grid;grid-template-columns:1fr 135px auto;align-items:end;gap:12px;margin-bottom:18px;padding:17px;border:1px solid var(--color-border);background:var(--color-background-card);border-radius:8px}.clue-form[hidden]{display:none}.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;background:var(--color-background-card);padding:13px;border:1px solid var(--color-border);border-radius:8px}.card{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:110px;border-radius:5px;background:var(--color-background-body);border:1px solid var(--color-border);border-top:4px solid var(--color-border);color:var(--color-text-primary);padding:18px 6px;box-shadow:0 3px 0 var(--color-border)}.card strong{font-size:22px;overflow-wrap:anywhere;line-height:1.4}.card:disabled{opacity:1}.card small{font-size:11px;margin-top:5px;color:var(--color-text-secondary)}.card .serial{position:absolute;left:7px;top:4px;font-size:9px;opacity:.6;font-family:monospace}.card.red{border-top:5px solid var(--color-text-primary);background:color-mix(in srgb,var(--color-text-primary) 12%,var(--color-background-card))}.card.blue{border-top:5px solid var(--color-text-accent);background:color-mix(in srgb,var(--color-text-accent) 20%,var(--color-background-card))}.card.assassin{border:2px dashed var(--color-text-primary);background:var(--color-background-body)}.card.neutral{background:var(--color-background-body);border-style:dotted}.card.revealed{opacity:.65;box-shadow:none;transform:translateY(3px);border-style:dashed}.board-empty{grid-column:1/-1;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:14px;min-height:230px;text-align:center;border:1px dashed var(--color-border);border-radius:6px;color:var(--color-text-secondary);padding:20px}.board-empty strong{font-size:22px;color:var(--color-text-primary)}.board-empty p{font-size:14px}.classified{display:inline-block;color:var(--color-text-accent);border:2px solid var(--color-text-accent);padding:3px 14px;font-size:18px;font-weight:700;transform:rotate(-3deg);letter-spacing:1px}.controls{display:flex;justify-content:space-between;gap:15px;margin-top:22px}.controls button{font-size:14px}#message{font-size:14px;color:var(--color-text-accent);min-height:28px;margin-top:10px}.log-panel{margin-top:17px;padding:15px 0;border-top:1px solid var(--color-border)}.log-panel summary{font-size:15px;font-weight:700;cursor:pointer}.log-panel ol{list-style:none;padding:0;font-size:13px;color:var(--color-text-secondary);max-height:180px;overflow:auto}.log-panel li{padding:5px 0}.log-panel li:before{content:'›';margin-right:10px;color:var(--color-text-accent)}footer{padding:22px 0;font-size:12px;color:var(--color-text-secondary);border-top:1px solid var(--color-border);margin-top:20px}dialog{background:var(--color-background-card);color:var(--color-text-primary);border:1px solid var(--color-border);border-top:4px solid var(--color-text-accent);border-radius:8px;width:calc(100% - 32px);max-width:520px;padding:25px}dialog::backdrop{background:color-mix(in srgb,var(--color-background-body) 85%,transparent);backdrop-filter:blur(5px)}dialog h2{font-size:24px;margin:8px 0}dialog p,dialog li{font-size:15px;color:var(--color-text-secondary)}dialog li{padding:6px 0}.dialog-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}.dialog-actions{display:flex;gap:12px;margin-top:22px}.dialog-actions button{flex:1}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:650px){body{padding:0 15px}header{padding:17px 0}.brand strong{font-size:17px}.brand small{font-size:10px}.logo{width:35px;height:40px;font-size:27px}.brand{gap:9px}header button{font-size:13px;padding:8px 12px}.intro{align-items:stretch;flex-direction:column;padding:23px 0;gap:22px}.intro-copy{padding:0}h1{font-size:30px}.intro p{font-size:13px}.spy-stamp{margin-top:12px;font-size:13px}.setup{width:100%;min-width:0;grid-template-columns:1fr;padding:17px}.setup button{font-size:16px}.board{gap:7px;padding:7px}.card{min-height:92px;padding:17px 3px;border-radius:5px}.card strong{font-size:clamp(13px,3.7vw,18px)}.card small{font-size:8px;line-height:1.4}.card .serial{font-size:7px;left:4px;top:3px}.banner{padding:14px 12px;gap:10px}.banner h2{font-size:21px}.banner p{font-size:12px}.score{font-size:11px}.score strong{font-size:23px}.clue-form{grid-template-columns:1fr 123px;padding:13px;gap:10px}.clue-form button{grid-column:1/-1}.clue-form label{font-size:13px}.notice{font-size:12px}.controls button{font-size:12px;padding:8px 11px}.board-empty strong{font-size:18px}.board-empty p{font-size:13px}footer{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style></head><body>
+<main class="shell"><header><div class="brand"><span class="logo">◈</span><div><strong>CODEWORDS</strong><small>หน่วยถอดรหัสลับ</small></div></div><button id="rules-button">? วิธีเล่น</button></header>
+<section class="intro"><div class="intro-copy"><span class="eyebrow">แฟ้มภารกิจ / CODEWORDS</span><h1>หนึ่งคำใบ้<br><span>ไขภารกิจลับทั้งทีม</span></h1><p>เดโมฝึกคนเดียว · ทดลองใบ้และทายได้ทั้งสองทีม</p><div class="spy-stamp">ลับสุดยอด</div></div><div class="setup"><label for="language">ชุดคำที่ใช้เล่น</label><select id="language"><option value="th">ภาษาไทย</option><option value="en">English</option></select><button id="new-game" class="primary">เริ่มภารกิจใหม่ →</button><small>หาคำให้ครบ · อย่าเปิดมือสังหาร</small></div></section>
+<div class="notice"><strong>โหมดฝึกคนเดียว</strong> เดโมนี้ไม่ใช่ห้องแชร์กับเพื่อน · ดาวน์โหลด ZIP เพื่อใช้เว็บ multiplayer จริง</div>
+<section id="banner" class="banner" aria-live="polite"><div><span class="eyebrow">รับภารกิจ</span><h2>พร้อมเป็นสายลับหรือยัง?</h2><p>กดเริ่มภารกิจใหม่ แล้วใบ้คำหรือเปิดแผนที่ลับเพื่อฝึก</p></div></section>
+<form id="clue-form" class="clue-form" hidden><div class="clue-input"><label for="clue-word">คำใบ้ 1 คำ</label><input id="clue-word" maxlength="32" placeholder="เช่น จักรวาล" autocomplete="off" required></div><div class="clue-count"><label for="clue-number">จำนวนคำ</label><select id="clue-number"><option value="1">1 คำ</option><option value="2" selected>2 คำ</option><option value="3">3 คำ</option><option value="4">4 คำ</option><option value="5">5 คำ</option><option value="6">6 คำ</option><option value="7">7 คำ</option><option value="8">8 คำ</option><option value="9">9 คำ</option><option value="0">0 · ไม่เกี่ยว</option><option value="infinity">∞ · ไม่จำกัด</option></select></div><button id="send-clue" type="button" class="primary">ส่งคำใบ้ →</button></form>
+<div id="board" class="board"><div class="board-empty"><span class="classified">แฟ้มภารกิจลับ</span><strong>25 คำ · 2 ทีม · 1 มือสังหาร</strong><p>กด “เริ่มภารกิจใหม่” ด้านบนเพื่อทดลองเล่น</p></div></div>
+<div class="controls"><button id="key-button">◈ เปิดแผนที่ลับเพื่อฝึก</button><button id="end-turn">จบตา →</button></div>
+<div id="message" role="status" aria-live="polite"></div><details class="log-panel" open><summary>บันทึกภารกิจ</summary><ol id="log"></ol></details>
+<footer>เกมแฟนเมดแนว Codenames · เดโมไม่มีการเก็บชื่อ โทเค็น หรือข้อมูลผู้เล่น</footer></main>
+<dialog id="rules"><div class="dialog-heading"><h2>ภารกิจ: หาคำของทีมให้ครบ</h2><button id="close-rules" aria-label="ปิดกติกา">×</button></div><ol><li>ทีมแรกมี 9 คำ อีกทีมมี 8 คำ คนทั่วไป 7 คำ และมือสังหาร 1 คำ</li><li>หัวหน้าสายลับใบ้ด้วยคำเดียวและจำนวน เช่น “ทะเล 3” ห้ามใช้คำบนโต๊ะหรือใบ้ด้วยตัวสะกด/ตำแหน่ง</li><li>ผู้ทายเปิดได้สูงสุดจำนวนที่ใบ้ + 1 ครั้ง ทายผิดเปลี่ยนตาทันที ต้องทายอย่างน้อย 1 คำก่อนจบตา</li><li>0 และ ∞ ทายได้ไม่จำกัดจนกว่าจะทายผิดหรือจบตา</li><li>ทีมที่หาคำครบก่อนชนะ เปิดมือสังหารแพ้ทันที</li></ol><p>ในเดโมนี้คุณใบ้และทายได้ทั้งสองทีม เปิด/ซ่อนแผนที่ลับเพื่อฝึกได้ เว็บ multiplayer แยกแผนที่ลับจริงบนเซิร์ฟเวอร์</p></dialog>
+<dialog id="confirm"><span class="eyebrow">ยืนยันการเปิดแฟ้ม</span><h2 id="confirm-title">เปิดคำนี้?</h2><p>เปิดแล้วทุกคนจะเห็น และย้อนกลับไม่ได้</p><div class="dialog-actions"><button id="cancel-guess">คิดอีกที</button><button id="accept-guess" class="primary">เปิดคำนี้ →</button></div></dialog>
+<script>const THAI_WORDS = [
+  'ทะเล','ภูเขา','ป่า','แม่น้ำ','น้ำตก','เกาะ','ชายหาด','ทะเลทราย','ถ้ำ','ท้องฟ้า',
+  'ดาว','พระจันทร์','ดวงอาทิตย์','เมฆ','ฝน','หิมะ','ลม','พายุ','สายรุ้ง','ฟ้าผ่า',
+  'แมว','หมา','ช้าง','เสือ','สิงโต','หมี','ลิง','กระต่าย','กวาง','ม้า',
+  'ปลา','ฉลาม','วาฬ','โลมา','หมึก','ปู','กุ้ง','เต่า','จระเข้','งู',
+  'นก','เป็ด','ไก่','นกฮูก','ผีเสื้อ','ผึ้ง','มด','แมงมุม','มังกร','ไดโนเสาร์',
+  'ข้าว','ขนมปัง','ก๋วยเตี๋ยว','พิซซ่า','ชีส','ไข่','น้ำผึ้ง','น้ำตาล','เกลือ','พริก',
+  'กาแฟ','ชา','นม','น้ำแข็ง','ไอศกรีม','ช็อกโกแลต','เค้ก','คุกกี้','กล้วย','มะม่วง',
+  'แตงโม','ส้ม','แอปเปิล','องุ่น','มะพร้าว','ทุเรียน','สับปะรด','มะนาว','สตรอว์เบอร์รี','ฟักทอง',
+  'บ้าน','โรงเรียน','โรงพยาบาล','ห้องสมุด','ตลาด','สวน','สะพาน','ปราสาท','วัด','สนามบิน',
+  'รถยนต์','รถไฟ','เครื่องบิน','เรือ','จักรยาน','จรวด','รถเมล์','แท็กซี่','ล้อ','ถนน',
+  'หนังสือ','ดินสอ','ปากกา','กระดาษ','ยางลบ','กรรไกร','กาว','กระเป๋า','แผนที่','จดหมาย',
+  'โทรศัพท์','คอมพิวเตอร์','กล้อง','วิทยุ','โทรทัศน์','หูฟัง','นาฬิกา','แบตเตอรี่','หลอดไฟ','หุ่นยนต์',
+  'กีตาร์','เปียโน','กลอง','ไวโอลิน','เพลง','ภาพยนตร์','เวที','หน้ากาก','นักร้อง','นักแสดง',
+  'ฟุตบอล','บาสเกตบอล','เทนนิส','มวย','ว่ายน้ำ','หมากรุก','ลูกบอล','เหรียญ','ถ้วย','สนาม',
+  'หมอ','ตำรวจ','ทหาร','ครู','นักบิน','กัปตัน','พ่อครัว','ชาวนา','นักสืบ','นักวิทยาศาสตร์',
+  'กุญแจ','ประตู','หน้าต่าง','กำแพง','บันได','หลังคา','เตียง','หมอน','เก้าอี้','โต๊ะ',
+  'กระจก','สบู่','ผ้าเช็ดตัว','แปรง','หวี','ร่ม','รองเท้า','หมวก','เสื้อ','ถุงมือ',
+  'ทอง','เงิน','เพชร','มงกุฎ','แหวน','สมบัติ','โจรสลัด','ดาบ','โล่','ธนู',
+  'ไฟ','ควัน','น้ำ','ดิน','ทราย','หิน','เหล็ก','ไม้','ใบไม้','ดอกไม้',
+  'หัวใจ','สมอง','ตา','หู','จมูก','มือ','เท้า','ฟัน','เลือด','กระดูก',
+  'ความฝัน','ความรัก','รอยยิ้ม','ความลับ','เวทมนตร์','ผี','เงา','แสง','เวลา','อวกาศ',
+  'โลก','ดาวอังคาร','ดาวเสาร์','ดาวเทียม','มนุษย์ต่างดาว','ห้องทดลอง','ยา','ไวรัส','เชื้อโรค','วัคซีน',
+  'ธง','ประเทศ','เมือง','หมู่บ้าน','ภาษา','ตัวเลข','สี','รูปภาพ','เทศกาล','ของขวัญ'
+];
+
+const ENGLISH_WORDS = [
+  'OCEAN','MOUNTAIN','FOREST','RIVER','ISLAND','BEACH','DESERT','CAVE','SKY','STAR',
+  'MOON','SUN','CLOUD','RAIN','SNOW','WIND','STORM','RAINBOW','LIGHTNING','ICE',
+  'CAT','DOG','ELEPHANT','TIGER','LION','BEAR','MONKEY','RABBIT','HORSE','DEER',
+  'FISH','SHARK','WHALE','DOLPHIN','OCTOPUS','CRAB','TURTLE','SNAKE','BIRD','OWL',
+  'BUTTERFLY','BEE','ANT','SPIDER','DRAGON','DINOSAUR','BREAD','PIZZA','CHEESE','EGG',
+  'HONEY','SUGAR','SALT','PEPPER','COFFEE','TEA','MILK','CAKE','COOKIE','BANANA',
+  'APPLE','ORANGE','COCONUT','LEMON','PUMPKIN','HOUSE','SCHOOL','HOSPITAL','LIBRARY','MARKET',
+  'GARDEN','BRIDGE','CASTLE','TEMPLE','AIRPORT','CAR','TRAIN','PLANE','BOAT','BICYCLE',
+  'ROCKET','BUS','WHEEL','ROAD','BOOK','PENCIL','PAPER','SCISSORS','BAG','MAP',
+  'LETTER','PHONE','COMPUTER','CAMERA','RADIO','CLOCK','BATTERY','ROBOT','GUITAR','PIANO',
+  'DRUM','SONG','MOVIE','STAGE','MASK','FOOTBALL','TENNIS','CHESS','BALL','MEDAL',
+  'DOCTOR','POLICE','SOLDIER','TEACHER','PILOT','CAPTAIN','CHEF','FARMER','DETECTIVE','SCIENTIST',
+  'KEY','DOOR','WINDOW','WALL','LADDER','ROOF','BED','PILLOW','CHAIR','TABLE',
+  'MIRROR','SOAP','BRUSH','UMBRELLA','SHOE','HAT','SHIRT','GLOVE','GOLD','DIAMOND',
+  'CROWN','RING','TREASURE','PIRATE','SWORD','SHIELD','ARROW','FIRE','SMOKE','WATER',
+  'SAND','STONE','IRON','WOOD','LEAF','FLOWER','HEART','BRAIN','EYE','HAND',
+  'DREAM','LOVE','SECRET','MAGIC','GHOST','SHADOW','LIGHT','TIME','SPACE','EARTH',
+  'MARS','SATURN','SATELLITE','ALIEN','LABORATORY','MEDICINE','VIRUS','FLAG','CITY','LANGUAGE'
+];
+
+const $ = selector => document.querySelector(selector);
+const game = { board: [], turn: 'red', phase: 'clue', key: false, selected: null, clue: null, left: null, made: 0, winner: null, log: [] };
+const name = team => team === 'red' ? 'แดง' : 'น้ำเงิน';
+const other = team => team === 'red' ? 'blue' : 'red';
+const escape = text => String(text).replace(/[&<>"']/g, char => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[char]);
+function random(n) { const values = new Uint32Array(1); let value; const ceiling = Math.floor(4294967296 / n) * n; do { crypto.getRandomValues(values); value = values[0]; } while(value >= ceiling); return value % n; }
+function shuffled(values) { const list=[...values]; for(let i=list.length-1;i>0;i--){const j=random(i+1);[list[i],list[j]]=[list[j],list[i]];}return list; }
+function remain(team) { return game.board.filter(card=>card.color===team&&!card.revealed).length; }
+function message(text) { $('#message').textContent=text; }
+function log(text) { game.log.unshift(text);game.log=game.log.slice(0,30); }
+function newGame() {
+  game.turn=random(2)?'red':'blue'; game.phase='clue';game.key=false;game.selected=null;game.clue=null;game.left=null;game.made=0;game.winner=null;game.log=[];
+  const colors=shuffled([...Array(9).fill(game.turn),...Array(8).fill(other(game.turn)),...Array(7).fill('neutral'),'assassin']);
+  game.board=shuffled($('#language').value==='en'?ENGLISH_WORDS:THAI_WORDS).slice(0,25).map((word,i)=>({word,color:colors[i],revealed:false}));
+  log(`เริ่มภารกิจ · ทีม${name(game.turn)}เริ่มก่อน`); message('เดโมฝึก: เปิดแผนที่ลับเพื่อคิดคำใบ้ แล้วซ่อนก่อนทายได้'); render();
+}
+function nextTurn() { game.turn=other(game.turn);game.phase='clue';game.left=null;game.made=0;log(`ถึงตาทีม${name(game.turn)}ใบ้คำ`); }
+function finish(team, reason) { game.winner=team;game.phase='finished';game.key=true;log(`ทีม${name(team)}ชนะ! ${reason}`); }
+function render() {
+  if (!game.board.length) return;
+  const clue=game.clue;
+  $('#banner').innerHTML=`<div><h2>${game.winner?`★ ทีม${name(game.winner)}ชนะ!`:game.phase==='guess'?`${game.turn==='red'?'◆':'◇'} ทีม${name(game.turn)} · “${escape(clue.word)}” ${clue.count??'∞'}`:`${game.turn==='red'?'◆':'◇'} ตาทีม${name(game.turn)}ใบ้คำ`}</h2><p>${game.winner?'เปิดแผนที่ลับแล้ว เริ่มเกมใหม่ได้เลย':game.phase==='guess'?`ทายได้อีก ${game.left??'∞'} ครั้ง · ระวังมือสังหาร`:'ใส่คำใบ้ 1 คำ + จำนวน'}</p></div><div class="score">◆ แดง <strong>${remain('red')}</strong><br>◇ น้ำเงิน <strong>${remain('blue')}</strong></div>`;
+  $('#clue-form').hidden=game.phase!=='clue';
+  $('#board').innerHTML=game.board.map((card,i)=>{
+    const show=game.key||card.revealed;
+    const identity=card.color==='red'?'◆ ทีมแดง':card.color==='blue'?'◇ ทีมน้ำเงิน':card.color==='assassin'?'✕ มือสังหาร':'◦ คนทั่วไป';
+    return `<button class="card ${show?card.color:''} ${card.revealed?'revealed':''}" data-index="${i}" ${game.phase!=='guess'||card.revealed?'disabled':''} aria-label="${escape(card.word)}${show?` · ${identity}`:''}"><span class="serial">${String(i+1).padStart(2,'0')}</span><strong>${escape(card.word)}</strong><small>${show?identity:'ยังไม่เปิด'}${card.revealed?' · เปิดแล้ว':''}</small></button>`;
+  }).join('');
+  $('#key-button').textContent=game.key?'◈ ซ่อนแผนที่ลับ':'◈ เปิดแผนที่ลับเพื่อฝึก';
+  $('#end-turn').disabled=game.phase!=='guess'||game.made===0;
+  $('#log').innerHTML=game.log.map(text=>`<li>${escape(text)}</li>`).join('');
+}
+$('#new-game').addEventListener('click',newGame);
+$('#key-button').addEventListener('click',()=>{if(!game.board.length)return;game.key=!game.key;render();});
+$('#end-turn').addEventListener('click',()=>{if(game.phase==='guess'&&game.made>0){nextTurn();message('');render();}});
+$('#clue-form').addEventListener('submit', event => event.preventDefault());
+$('#clue-word').addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); $('#send-clue').click(); } });
+$('#send-clue').addEventListener('click',event=>{
+  event.preventDefault();if(game.phase!=='clue')return;
+  const word=$('#clue-word').value.trim().normalize('NFC'), raw=$('#clue-number').value;
+  if(!word||word.length>32||/[\s\p{Cc}\p{Cf}]/u.test(word))return message('ใช้คำใบ้ 1 คำ ไม่เว้นวรรค');
+  if(game.board.some(card=>!card.revealed&&card.word.toLocaleLowerCase()===word.toLocaleLowerCase()))return message('ห้ามใบ้ด้วยคำที่ยังอยู่บนโต๊ะ');
+  const count=raw==='infinity'?null:Number(raw);game.clue={word,count};game.left=count===0||count===null?null:count+1;game.made=0;game.phase='guess';
+  log(`ทีม${name(game.turn)}ใบ้ “${word}” · ${count??'∞'}`);$('#clue-word').value='';message('เลือกคำบนโต๊ะ แล้วยืนยันเพื่อเปิด');render();
+});
+$('#board').addEventListener('click',event=>{
+  const button=event.target.closest('[data-index]');if(!button||button.disabled||game.phase!=='guess')return;
+  game.selected=Number(button.dataset.index);$('#confirm-title').textContent=`เปิดคำว่า “${game.board[game.selected].word}”?`;$('#confirm').showModal();
+});
+$('#cancel-guess').addEventListener('click',()=>{$('#confirm').close();game.selected=null;});
+$('#accept-guess').addEventListener('click',()=>{
+  $('#confirm').close();if(game.selected===null||game.phase!=='guess')return;
+  const card=game.board[game.selected];game.selected=null;if(card.revealed)return;
+  card.revealed=true;game.made++;log(`เปิด “${card.word}” · ${card.color==='assassin'?'มือสังหาร':card.color==='neutral'?'คนทั่วไป':`ทีม${name(card.color)}`}`);
+  if(card.color==='assassin')finish(other(game.turn),'อีกทีมเปิดมือสังหาร');
+  else if(['red','blue'].includes(card.color)&&remain(card.color)===0)finish(card.color,'พบคำครบทุกคำ');
+  else if(card.color!==game.turn)nextTurn();
+  else if(game.left!==null&&--game.left===0)nextTurn();
+  message('');render();
+});
+$('#confirm').addEventListener('cancel',()=>game.selected=null);
+$('#rules-button').addEventListener('click',()=>$('#rules').showModal());
+$('#close-rules').addEventListener('click',()=>$('#rules').close());
+$('#key-button').disabled=true;$('#end-turn').disabled=true;
+$('#new-game').addEventListener('click',()=>$('#key-button').disabled=false);
+</script></body></html>
